@@ -2,7 +2,7 @@
     <md-card>
       <md-card-header>
         <md-card-header-text>
-            <md-avatar class="md-avatar-icon">A</md-avatar>
+            <md-avatar class="md-avatar-icon md-primary">A</md-avatar>
           <div class="md-title">Media card</div>
           <div class="md-subhead">Normal size</div>
         </md-card-header-text>

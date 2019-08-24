@@ -2,19 +2,33 @@
   <div class="page-container">
     <md-app md-mode="fixed">
       <md-app-toolbar class="md-primary">
-        <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
-          <md-icon>menu</md-icon>
-        </md-button>
-        <span class="md-title">My Title</span>
-        <div class="md-toolbar-section-end">
-          <md-button class="md-icon-button">
-            <md-icon>refresh</md-icon>
-          </md-button>
+        <div class="md-toolbar-row">
 
-          <md-button class="md-icon-button">
-            <md-icon>more_vert</md-icon>
-          </md-button>
-        </div>
+            <div class="md-toolbar-section-start">
+                <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+                <md-icon>menu</md-icon>
+                </md-button>
+                <span class="md-title">My Title</span>
+            </div>
+
+            <vue-fuse 
+                :keys="keys" 
+                :list="bikes" 
+                :defaultAll="false" 
+                :eventName="bikesChanged"
+                class="fuse">
+            </vue-fuse>
+
+            <div class="md-toolbar-section-end">
+                <md-button class="md-icon-button">
+                    <md-icon>refresh</md-icon>
+                </md-button>
+
+                <md-button class="md-icon-button">
+                    <md-icon>more_vert</md-icon>
+                </md-button>
+            </div>
+        </div>    
       </md-app-toolbar>
 
       <md-app-drawer :md-active.sync="menuVisible">
@@ -37,15 +51,20 @@
 
       <md-app-content>
             <card-persona></card-persona>
+                
+            <md-button class="md-fab md-primary md-fab-bottom-right">
+            <md-icon>add</md-icon>
+            </md-button>
       </md-app-content>
-      
+
+
     </md-app>
   </div>
 </template>
 
 <style lang="scss" scoped>
   .md-app {
-    max-height: 100%;
+    height: 100%;
     border: 1px solid rgba(#000, .12);
   }
 
@@ -53,6 +72,11 @@
   .md-drawer {
     width: 230px;
     max-width: calc(100vw - 125px);
+  }
+
+  .fuse{
+      width:100%;
+      margin-letf: 10px;
   }
 </style>
 

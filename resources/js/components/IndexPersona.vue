@@ -8,8 +8,8 @@
                 <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
                 <md-icon>menu</md-icon>
                 </md-button>
-                <span class="md-title">My Title</span>
-            </div>
+                <span class="md-title">{{nombre_app}}</span>
+             </div>
 
             <vue-fuse 
                 :keys="keys" 
@@ -24,12 +24,15 @@
                     <md-icon>refresh</md-icon>
                 </md-button>
 
-                <md-button class="md-icon-button">
-                    <md-icon>more_vert</md-icon>
-                </md-button>
-            </div>
-        </div>    
-      </md-app-toolbar>
+                <md-menu class="md-icon-button">
+                    <md-icon md-menu-trigger>more_vert</md-icon>
+                    <md-menu-content>
+                        <md-menu-item>Cerrar Sesión</md-menu-item>
+                     </md-menu-content>
+                </md-menu>
+             </div>
+         </div>    
+     </md-app-toolbar>
 
       <md-app-drawer :md-active.sync="menuVisible">
         <md-toolbar class="md-transparent" md-elevation="0">Navigation</md-toolbar>
@@ -76,7 +79,7 @@
 
   .fuse{
       width:100%;
-      margin-letf: 10px;
+      margin-left: 10px;
   }
 </style>
 
@@ -84,7 +87,8 @@
 export default {
   name: 'Reveal',
   data: () => ({
-    menuVisible: false
+    menuVisible: false,
+    nombre_app: 'Personas-Vue'
   })
 }
 </script>

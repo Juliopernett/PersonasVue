@@ -1725,6 +1725,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Media'
 });
@@ -1855,11 +1856,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Reveal',
   data: function data() {
     return {
-      menuVisible: false
+      menuVisible: false,
+      nombre_app: 'Personas-Vue'
     };
   }
 });
@@ -6342,7 +6347,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".md-app[data-v-74ca9536] {\n  height: 100%;\n  border: 1px solid rgba(0, 0, 0, 0.12);\n}\n.md-drawer[data-v-74ca9536] {\n  width: 230px;\n  max-width: calc(100vw - 125px);\n}\n.fuse[data-v-74ca9536] {\n  width: 100%;\n  margin-letf: 10px;\n}", ""]);
+exports.push([module.i, ".md-app[data-v-74ca9536] {\n  height: 100%;\n  border: 1px solid rgba(0, 0, 0, 0.12);\n}\n.md-drawer[data-v-74ca9536] {\n  width: 230px;\n  max-width: calc(100vw - 125px);\n}\n.fuse[data-v-74ca9536] {\n  width: 100%;\n  margin-left: 10px;\n}", ""]);
 
 // exports
 
@@ -37939,9 +37944,11 @@ var render = function() {
       _c(
         "md-card-actions",
         [
-          _c("md-button", [_vm._v("Action")]),
+          _c("md-button", [_vm._v("Ver")]),
           _vm._v(" "),
-          _c("md-button", [_vm._v("Action")])
+          _c("md-button", [_vm._v("Editar")]),
+          _vm._v(" "),
+          _c("md-button", [_vm._v("eliminar")])
         ],
         1
       )
@@ -38050,7 +38057,7 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("span", { staticClass: "md-title" }, [
-                      _vm._v("My Title")
+                      _vm._v(_vm._s(_vm.nombre_app))
                     ])
                   ],
                   1
@@ -38078,9 +38085,19 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c(
-                      "md-button",
+                      "md-menu",
                       { staticClass: "md-icon-button" },
-                      [_c("md-icon", [_vm._v("more_vert")])],
+                      [
+                        _c("md-icon", { attrs: { "md-menu-trigger": "" } }, [
+                          _vm._v("more_vert")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "md-menu-content",
+                          [_c("md-menu-item", [_vm._v("Cerrar Sesión")])],
+                          1
+                        )
+                      ],
                       1
                     )
                   ],
